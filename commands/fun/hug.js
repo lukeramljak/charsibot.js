@@ -2,16 +2,14 @@ const { SlashCommandBuilder } = require('discord.js');
 
 module.exports = {
   data: new SlashCommandBuilder()
-    .setName('bonk')
-    .setDescription('Bonk someone')
+    .setName('hug')
+    .setDescription('Hug someone')
     .addUserOption((option) =>
-      option.setName('name').setDescription('user to bonk').setRequired(true)
+      option.setName('name').setDescription('user to hug').setRequired(true)
     ),
   category: 'fun',
   async execute(interaction) {
     const user = interaction.options.getUser('name');
-    await interaction.reply(
-      `${interaction.user.displayName} has bonked <@${user.id}>. Oh my...`
-    );
+    await interaction.reply(`_hugs <@${user.id}>_`);
   },
 };

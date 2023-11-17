@@ -2,16 +2,19 @@ const { SlashCommandBuilder } = require('discord.js');
 
 module.exports = {
   data: new SlashCommandBuilder()
-    .setName('bonk')
-    .setDescription('Bonk someone')
+    .setName('tomato')
+    .setDescription('Toss a tomato!')
     .addUserOption((option) =>
-      option.setName('name').setDescription('user to bonk').setRequired(true)
+      option
+        .setName('name')
+        .setDescription('choose your target')
+        .setRequired(true)
     ),
   category: 'fun',
   async execute(interaction) {
     const user = interaction.options.getUser('name');
     await interaction.reply(
-      `${interaction.user.displayName} has bonked <@${user.id}>. Oh my...`
+      `${interaction.user.displayName} threw a tomato at <@${user.id}>. tomato tomato tomato! <:rip:1057489640636035102>`
     );
   },
 };
