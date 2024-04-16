@@ -6,7 +6,9 @@ module.exports = {
       message.content.toLowerCase().includes('come') ||
       message.content.toLowerCase().includes('coming')
     ) {
-      await message.reply('no coming');
+      if (Math.random() < 0.20) {
+	await message.reply('no coming');
+      }
     }
   },
 };
