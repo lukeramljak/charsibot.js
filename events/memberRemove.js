@@ -7,8 +7,11 @@ module.exports = {
 
     const channel = member.guild.channels.cache.get(channelId);
     if (channel) {
+      const emoji = member.guild.emojis.cache.find(
+        (emoji) => emoji.name === "rip",
+      );
       await channel.send(
-        `${member.user.username} has left the server. <:rip:1057489640636035102>`
+        `${member.user.username} has left the server. ${emoji}`,
       );
     }
   },
