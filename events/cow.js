@@ -1,9 +1,12 @@
 module.exports = {
-  name: 'messageCreate',
+  name: "messageCreate",
   async execute(message) {
     if (message.author.bot) return;
-    if (message.content.toLowerCase().includes('cow')) {
-      await message.reply('MOOOOO! <:ANGERY:1021275434823995475>');
+    if (message.content.toLowerCase().includes("cow")) {
+      const emoji = message.guild.emojis.cache.find(
+        (emoji) => emoji.name === "rage",
+      );
+      await message.reply(`MOOOOO! ${emoji}`);
     }
   },
 };
