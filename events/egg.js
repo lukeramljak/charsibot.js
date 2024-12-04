@@ -1,9 +1,9 @@
 module.exports = {
-  name: 'messageCreate',
+  name: "messageCreate",
   async execute(message) {
     if (message.author.bot) return;
-    if (message.content.toLowerCase().includes('egg')) {
-      await message.reply('egg');
+    if (message.content.toLowerCase().includes("egg")) {
+      await message.reply("egg");
     }
   },
 };
